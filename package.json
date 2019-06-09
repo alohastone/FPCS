@@ -1,0 +1,23 @@
+{
+  "name": "fp",
+  "version": "1.0.0",
+  "description": "Fishing Planet Resources",
+  "main": "index.js",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "author": "alohastone",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "bootswatch": "^4.3.1",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "handlebars": "^4.1.1",
+    "jquery": "^3.3.1",
+    "popper": "^1.0.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  }
+}

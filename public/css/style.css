@@ -1,0 +1,904 @@
+@font-face {
+    font-family: 'Clear Sans';
+    src: url('/fonts/ClearSans-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FP';
+    src: url('/fonts/fishing-planet.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+ 
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+	    transform: translate(-50%, -50%);
+}
+
+.content {
+    margin: 0 auto;
+    width: 95%;
+   /* max-width: 960px; */
+    padding: 15px;
+    margin-top: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.content h1 {
+    margin: 1.5rem 0 !important;
+    padding: 0;
+    font-size: 3rem;
+    text-align: center;
+}
+
+p {
+    margin: 0 0 30px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px !important;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    vertical-align: middle;
+    color: #fff;
+}
+
+.content ul {
+	list-style-type:none;
+	
+}
+
+@media (max-width: 767px) {
+    .fullscreen-bg {
+        background: url('https://www.alohastone.com/wp-content/uploads/back-1920x1080.jpg') center center / cover no-repeat;
+    }
+
+    .fullscreen-bg__video {
+        display: none;
+    }
+}
+
+.fish {
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-body p {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.uni {
+    color: orange;
+}
+
+.trophy {
+    color: green;
+}
+
+.common {
+    color: grey;
+}
+
+.times tbody th {
+    font-size: 0.8rem;
+    font-weight: normal;
+    text-align: left;
+    padding: 10px !important;
+}
+
+.times thead th {
+    font-size: 0.8rem;
+}
+
+.times th, .times tr, .times td {
+    vertical-align: middle !important;
+}
+
+.times tr {
+    height: 40px;
+}
+
+/* Fishing Planet Icons */
+
+.fp {
+    display: inline-block;
+    font: normal normal normal 14px/1 fishing-planet;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fp-lg {
+    font-size: 1.33333333em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+
+.fp-2x {
+    font-size: 2em;
+}
+
+.fp-3x {
+    font-size: 3em;
+}
+
+.fp-4x {
+    font-size: 4em;
+}
+
+.fp-5x {
+    font-size: 5em;
+}
+
+.fp-6x {
+    font-size: 6em;
+}
+
+.fp-7x {
+    font-size: 7em;
+}
+
+.fp-fw {
+    width: 1.28571429em;
+    text-align: center;
+}
+
+.fp-ul {
+    padding-left: 0;
+    margin-left: 2.14285714em;
+    list-style-type: none;
+}
+
+.fp-ul > li {
+    position: relative;
+}
+
+.fp-li {
+    position: absolute;
+    left: -2.14285714em;
+    width: 2.14285714em;
+    top: 0.14285714em;
+    text-align: center;
+}
+
+.fp-li.fp-lg {
+    left: -1.85714286em;
+}
+
+.fp-border {
+    padding: .2em .25em .15em;
+    border: solid 0.08em #eeeeee;
+    border-radius: .1em;
+}
+
+.fp-pull-left {
+    float: left;
+}
+
+.fp-pull-right {
+    float: right;
+}
+
+.fp.fp-pull-left {
+    margin-right: .3em;
+}
+
+.fp.fp-pull-right {
+    margin-left: .3em;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.fp.pull-left {
+    margin-right: .3em;
+}
+
+.fp.pull-right {
+    margin-left: .3em;
+}
+
+.fp-spin {
+    -webkit-animation: fp-spin 2s infinite linear;
+    animation: fp-spin 2s infinite linear;
+}
+
+.fp-pulse {
+    -webkit-animation: fp-spin 1s infinite steps(8);
+    animation: fp-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fp-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes fp-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+.fp-rotate-90 {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.fp-rotate-180 {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.fp-rotate-270 {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.fp-flip-horizontal {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+    -webkit-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+.fp-flip-vertical {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+    -webkit-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1);
+}
+
+:root .fp-rotate-90,:root .fp-rotate-180,:root .fp-rotate-270,:root .fp-flip-horizontal,:root .fp-flip-vertical {
+    filter: none;
+}
+
+.fp-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+}
+
+.fp-stack-1x,.fp-stack-2x {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.fp-stack-1x {
+    line-height: inherit;
+}
+
+.fp-stack-2x {
+    font-size: 2em;
+}
+
+.fp-inverse {
+    color: #ffffff;
+}
+
+.fp-equip:before {
+    content: "\e600";
+}
+
+.fp-jacke:before {
+    content: "\e601";
+}
+
+.fp-handkescher:before {
+    content: "\e602";
+}
+
+.fp-rucksack:before {
+    content: "\e603";
+}
+
+.fp-haus:before {
+    content: "\e604";
+}
+
+.fp-auto:before {
+    content: "\e605";
+}
+
+.fp-haus2:before {
+    content: "\e606";
+}
+
+.fp-avatar:before {
+    content: "\e608";
+}
+
+.fp-shop:before {
+    content: "\e609";
+}
+
+.fp-karton:before {
+    content: "\e60a";
+}
+
+.fp-pokal-sieger:before {
+    content: "\e60e";
+}
+
+.fp-pokal-dark:before {
+    content: "\e63d";
+}
+
+.fp-profile:before {
+    content: "\e60f";
+}
+
+.fp-fischliste:before {
+    content: "\e610";
+}
+
+.fp-trash:before {
+    content: "\e613";
+}
+
+.fp-luftdruck-voll:before {
+    content: "\e614";
+}
+
+.fp-luftdruck-mittel:before {
+    content: "\e615";
+}
+
+.fp-luftdruck-gering:before {
+    content: "\e616";
+}
+
+.fp-sonne:before {
+    content: "\e617";
+}
+
+.fp-mischwetter:before {
+    content: "\e618";
+}
+
+.fp-wolke:before {
+    content: "\e619";
+}
+
+.fp-regen:before {
+    content: "\e61b";
+}
+
+.fp-donner:before {
+    content: "\e61c";
+}
+
+.fp-schnee:before {
+    content: "\e61d";
+}
+
+.fp-fischgroesse:before {
+    content: "\e61f";
+}
+
+.fp-flugzeug:before {
+    content: "\e620";
+}
+
+.fp-info-kreis:before {
+    content: "\e624";
+}
+
+.fp-pfeil-links:before {
+    content: "\e625";
+}
+
+.fp-pfeil-rechts:before {
+    content: "\e626";
+}
+
+.fp-zahnrad:before {
+    content: "\e627";
+}
+
+.fp-credits:before {
+    content: "\e62b";
+}
+
+.fp-credits2:before {
+    content: "\e647";
+}
+
+.fp-coins:before {
+    content: "\e62c";
+}
+
+.fp-stern-dark:before {
+    content: "\e62d";
+}
+
+.fp-globus:before {
+    content: "\e62e";
+}
+
+.fp-karte:before {
+    content: "\e63f";
+}
+
+.fp-karte-weg:before {
+    content: "\e62f";
+}
+
+.fp-schloss-square:before {
+    content: "\e630";
+}
+
+.fp-schloss-circle:before {
+    content: "\e64a";
+}
+
+.fp-schriftrolle:before {
+    content: "\e631";
+}
+
+.fp-statistik:before {
+    content: "\e632";
+}
+
+.fp-emblem:before {
+    content: "\e633";
+}
+
+.fp-haken:before {
+    content: "\e634";
+}
+
+.fp-pose:before {
+    content: "\e635";
+}
+
+.fp-haken-pose:before {
+    content: "\e637";
+}
+
+.fp-schnur:before {
+    content: "\e638";
+}
+
+.fp-stiefel:before {
+    content: "\e639";
+}
+
+.fp-lizenz-light:before {
+    content: "\e63a";
+}
+
+.fp-lizenz-dark:before {
+    content: "\e63c";
+}
+
+.fp-garage:before {
+    content: "\e63b";
+}
+
+.fp-glas:before {
+    content: "\e640";
+}
+
+.fp-verkaufen:before {
+    content: "\e673";
+}
+
+.fp-geschenk:before {
+    content: "\e663";
+}
+
+.fp-wurm:before {
+    content: "\e641";
+}
+
+.fp-hand-light:before {
+    content: "\e642";
+}
+
+.fp-hand-dark:before {
+    content: "\e643";
+}
+
+.fp-time-light:before {
+    content: "\e644";
+}
+
+.fp-premium-star:before {
+    content: "\e645";
+}
+
+.fp-premium-star-kreis:before {
+    content: "\e646";
+}
+
+.fp-buch:before {
+    content: "\e648";
+}
+
+.fp-cup:before {
+    content: "\e681";
+}
+
+.fp-cup-result:before {
+    content: "\e67e";
+}
+
+.fp-cup-one:before {
+    content: "\e64b";
+}
+
+.fp-cup-two:before {
+    content: "\e64c";
+}
+
+.fp-cup-three:before {
+    content: "\e64d";
+}
+
+.fp-cup-one-new:before {
+    content: "\e5e1";
+    background: linear-gradient(to right, #dbc160 50%,#dbc160 50%,#e3c020 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fp-cup-two-new:before {
+    content: "\e5e2";
+    background: linear-gradient(to right, #abc0c3 50%,#abc0c3 50%,#9db8bb 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fp-cup-three-new:before {
+    content: "\e5e0";
+    background: linear-gradient(to right, #bb9380 50%,#bb9380 50%,#c09068 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fp-check:before {
+    content: "\e64f";
+}
+
+.fp-pfeil-vor:before {
+    content: "\e650";
+}
+
+.fp-pfeil-zurueck:before {
+    content: "\e651";
+}
+
+.fp-spot:before {
+    content: "\e65d";
+}
+
+.fp-jig-shad:before {
+    content: "\e664";
+}
+
+.fp-bassjig:before {
+    content: "\e665";
+}
+
+.fp-crankbait:before {
+    content: "\e666";
+}
+
+.fp-spoons:before {
+    content: "\e667";
+}
+
+.fp-koeder:before {
+    content: "\e668";
+}
+
+.fp-bisszeit:before {
+    content: "\e669";
+}
+
+.fp-fishing:before {
+    content: "\e5db";
+}
+
+.fp-planet:before {
+    content: "\e5dc";
+}
+
+.fp-fp-text-full:before {
+    content: "\e5dd";
+}
+
+.fp-fp-logo:before {
+    content: "\e5de";
+}
+
+.fp-bisszeit-new:before {
+    content: "\e5df";
+}
+
+.fp-schnurtiefe:before {
+    content: "\e5e3";
+}
+
+.fp-rolle:before {
+    content: "\e5e4";
+}
+
+.fp-weste:before {
+    content: "\e5e5";
+}
+
+.fp-rodholder:before {
+    content: "\e5e6";
+}
+
+.fp-rodcase:before {
+    content: "\e5e7";
+}
+
+.fp-rod:before {
+    content: "\e5e8";
+}
+
+.fp-bag:before {
+    content: "\e5e9";
+}
+
+.fp-line:before {
+    content: "\e5ea";
+}
+
+.fp-hook:before {
+    content: "\e5eb";
+}
+
+.fp-cap:before {
+    content: "\e5ec";
+}
+
+.fp-gloves:before {
+    content: "\e5ed";
+}
+
+.fp-sunglasses:before {
+    content: "\e5ee";
+}
+
+.fp-bobber:before {
+    content: "\e5ef";
+}
+
+.fp-echosounder:before {
+    content: "\e5f0";
+}
+
+.fp-catapult:before {
+    content: "\e5f1";
+}
+
+.fp-boots:before {
+    content: "\e5f2";
+}
+
+.fp-bag-small:before {
+    content: "\e5f3";
+}
+
+.fp-bait:before {
+    content: "\e5f4";
+}
+
+.fp-panfish:before {
+    content: "\e5f5";
+}
+
+.fp-pike:before {
+    content: "\e5f6";
+}
+
+.fp-bass:before {
+    content: "\e5f7";
+}
+
+.fp-carp:before {
+    content: "\e5f8";
+}
+
+.fp-catfish:before {
+    content: "\e5f9";
+}
+
+.fp-trout:before {
+    content: "\e5fa";
+}
+
+.fp-salmon:before {
+    content: "\e5fb";
+}
+
+.fp-walleye:before {
+    content: "\e5fc";
+}
+
+.fp-gar:before {
+    content: "\e5fd";
+}
+
+.fp-sturgeon:before {
+    content: "\e5fe";
+}
+
+.fp-crappie:before {
+    content: "\e5ff";
+}
+
+.fp-settings:before {
+    content: "\e627";
+}
+
+.fp-guides:before {
+    content: "\e648";
+}
+
+.fp-tpcatch:before {
+    content: "\e5d9";
+    color: #C81523;
+}
+
+.fp-pantoffel:before {
+    content: "\e5da";
+}
+
+.fp-wolkenacht:before {
+    content: "\e68c";
+}
+.fp-halbmondsternnacht:before {
+    content: "\e688";
+}
+.fp-vollmondsternnacht:before {
+    content: "\e689";
+}
+.fp-sternnacht:before {
+    content: "\e68a";
+}
+.fp-halbmonwolkesternnacht:before {
+    content: "\e68b";
+}
+.fp-wolkeregennacht:before {
+    content: "\e68d";
+}
+.fp-flugticket:before {
+    content: "\e68e";
+}
+
+/* Zeiten-Tabelle */
+
+  p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 18.0px; font: 10.0px 'Clear Sans'; color: #ffffff; -webkit-text-stroke: #000000}
+  p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 10.0px 'Clear Sans'; color: #ffffff; -webkit-text-stroke: #ffffff}
+  p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 11.0px 'Clear Sans'; color: #000000; -webkit-text-stroke: #000000}
+  p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 18.0px; font: 11.0px 'Clear Sans'; color: #000000; -webkit-text-stroke: #000000}
+  p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; line-height: 18.0px; font: 11.0px 'Clear Sans'; color: #000000; -webkit-text-stroke: #000000}
+  p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+  span.s1 {font-kerning: none}
+  table.t1 {border-collapse: collapse; width: 100%;}
+  td.td1 {width: 118.0px; height: 32.0px; background-color: #25252a; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td2 {width: 53.0px; height: 32.0px; background-color: #25252a; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td3 {width: 30.0px; height: 32.0px; background-color: #25252a; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td4 {width: 28.0px; height: 24.0px; background-color: #25252a; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 4.0px 4.0px 4.0px 4.0px}
+  td.td5 {width: 28.0px; height: 32.0px; background-color: #25252a; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td6 {width: 88.0px; height: 32.0px; background-color: #25252a; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td7 {width: 43.0px; height: 32.0px; background-color: #25252a; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td8 {width: 44.0px; height: 32.0px; background-color: #25252a; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td9 {width: 118.0px; height: 63.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td10 {width: 53.0px; height: 63.0px; background-color: #ffff0b; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td11 {width: 30.0px; height: 63.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td12 {width: 28.0px; height: 15.0px; background-color: #ffff0b; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #c1c1c1 #c1c1c1 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td13 {width: 28.0px; height: 15.0px; background-color: #ffff0b; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #c1c1c1 #c1c1c1 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td14 {width: 28.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #c1c1c1 #c1c1c1 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td15 {width: 28.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #c1c1c1 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td16 {width: 15.0px; height: 15.0px; background-color: #ffff0b; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td17 {width: 72.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000}
+  td.td18 {width: 43.0px; height: 63.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td19 {width: 44.0px; height: 63.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td20 {width: 28.0px; height: 15.0px; background-color: #8ab4e0; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #c1c1c1 #c1c1c1 #c1c1c1 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td21 {width: 28.0px; height: 15.0px; background-color: #8ab4e0; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #c1c1c1 #c1c1c1 #c1c1c1 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td22 {width: 28.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #c1c1c1 #c1c1c1 #c1c1c1 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td23 {width: 28.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #c1c1c1 #000000 #c1c1c1 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td24 {width: 15.0px; height: 15.0px; background-color: #8ab4e0; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td25 {width: 28.0px; height: 15.0px; background-color: #949494; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #c1c1c1 #c1c1c1 #c1c1c1 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td26 {width: 28.0px; height: 15.0px; background-color: #949494; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #c1c1c1 #c1c1c1 #c1c1c1 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td27 {width: 15.0px; height: 15.0px; background-color: #949494; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td28 {width: 28.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #c1c1c1 #c1c1c1 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td29 {width: 28.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #c1c1c1 #c1c1c1 #000000 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td30 {width: 28.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #c1c1c1 #000000 #000000 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td31 {width: 15.0px; height: 15.0px; background-color: #000000; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td32 {width: 28.0px; height: 15.0px; background-color: #ffff0b; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #c1c1c1 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td33 {width: 28.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #c1c1c1 #c1c1c1 #c1c1c1 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td34 {width: 28.0px; height: 15.0px; background-color: #949494; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #c1c1c1 #000000 #c1c1c1 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td35 {width: 28.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #c1c1c1 #c1c1c1 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td36 {width: 53.0px; height: 63.0px; background-color: #16a53f; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td37 {width: 28.0px; height: 15.0px; background-color: #8ab4e0; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #c1c1c1 #000000 #c1c1c1 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td38 {width: 53.0px; height: 63.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td39 {width: 118.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td40 {width: 53.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td41 {width: 30.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td42 {width: 28.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #c1c1c1 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td43 {width: 28.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #c1c1c1 #000000 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td44 {width: 28.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #c1c1c1; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td45 {width: 88.0px; height: 63.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td46 {width: 43.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
+  td.td47 {width: 44.0px; height: 15.0px; background-color: #cfcfcf; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 0.0px 3.0px 0.0px 3.0px}
